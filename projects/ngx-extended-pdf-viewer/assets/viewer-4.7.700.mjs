@@ -24,7 +24,7 @@
 
 /******/ // The require scope
 /******/ var __webpack_require__ = {};
-/******/ 
+/******/
 /************************************************************************/
 /******/ /* webpack/runtime/define property getters */
 /******/ (() => {
@@ -37,12 +37,12 @@
 /******/ 		}
 /******/ 	};
 /******/ })();
-/******/ 
+/******/
 /******/ /* webpack/runtime/hasOwnProperty shorthand */
 /******/ (() => {
 /******/ 	__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ })();
-/******/ 
+/******/
 /************************************************************************/
 var __webpack_exports__ = globalThis.pdfjsLib = {};
 
@@ -20820,7 +20820,7 @@ var __webpack_exports__version = __webpack_exports__.version;
 
 /******/ // The require scope
 /******/ var __webpack_require__ = {};
-/******/ 
+/******/
 /************************************************************************/
 /******/ /* webpack/runtime/define property getters */
 /******/ (() => {
@@ -20833,12 +20833,12 @@ var __webpack_exports__version = __webpack_exports__.version;
 /******/ 		}
 /******/ 	};
 /******/ })();
-/******/ 
+/******/
 /******/ /* webpack/runtime/hasOwnProperty shorthand */
 /******/ (() => {
 /******/ 	__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ })();
-/******/ 
+/******/
 /************************************************************************/
 var __webpack_exports__ = {};
 
@@ -33044,6 +33044,11 @@ function styleInject(css, ref) {
   }
   var head = document.head || document.getElementsByTagName('head')[0];
   var style = document.createElement('style');
+  let nonce;
+  for (const child of head.children) {
+    nonce = child.nonce;
+    if (nonce) break;
+  }
   style.type = 'text/css';
   if (insertAt === 'top') {
     if (head.firstChild) {
